@@ -37,36 +37,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.s?css$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              localIdentName: '[name]__[local]__[hash:base64:5]',
-              modules: true,
-              importLoaders: 1,
-              sourceMap: true,
-            },
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: () => [
-                postcssFocus(),
-                cssnext({
-                  browsers: ['last 2 versions', 'IE > 10'],
-                }),
-                postcssReporter({
-                  clearMessages: true,
-                }),
-              ],
-            },
-          },
-        ],
+          test: /\.scss$/,
+          loader: 'style-loader!css-loader?localIdentName=[name]__[local]__[hash:base64:5]&modules&importLoaders=1&sourceMap!sass-loader?sourceMap',
       },
       {
         test: /\.css$/,

@@ -1,0 +1,36 @@
+/*
+This file is use to override default SCSS files so we can create our own theme.
+1) You can use variables like : $red:    #F43825; to change the default red! (Youhooou)
+(For better instructions about overriding variables, take a look at the file _general_variables.scss)
+*/
+
+////// Fonts
+$font-size-base: 1.25rem; // Assumes the browser default, typically `16px`
+$font-size-lg:   2.375rem;
+$font-size-sm:   1rem;
+$font-size-xs:   .875rem;
+$font-family-sans-serif:  'Source Sans Pro', "Helvetica Neue", Arial, sans-serif;
+
+
+////// Colors
+$teal:   #4cc4cf;
+$teal_hover: #31a4cf;
+$red:    #EA3056;
+$red_hover: #ea1243;
+$yellow: #FDC02D;
+$yellow_hover: #fd9e26;
+$purple: #722c8a;
+$purple_hover: #65138a;
+$orange: #F28650;
+$orange_hover: #f26623;
+$primary: $teal;
+$primary_hover: $teal_hover;
+$volunteering: $orange;
+$volunteering_hover: $orange_hover;
+$fundraising: $red;
+$fundraising_hover: $red_hover;
+$collection: $purple;
+$collection_hover: $purple_hover;
+$skillbased: $yellow;
+$skillbased_hover: $yellow_hover;
+$white: #FFF;

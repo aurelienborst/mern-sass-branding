@@ -37,38 +37,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.s?css$/,
-        exclude: /node_modules/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                localIdentName: '[hash:base64]',
-                modules: true,
-                importLoaders: 1,
-              },
-            },
-            {
-              loader: 'postcss-loader',
-              options: {
-                plugins: () => [
-                  postcssFocus(),
-                  cssnext({
-                    browsers: ['last 2 versions', 'IE > 10'],
-                  }),
-                  cssnano({
-                    autoprefixer: false,
-                  }),
-                  postcssReporter({
-                    clearMessages: true,
-                  }),
-                ],
-              },
-            },
-          ],
-        }),
+          test: /\.scss$/,
+          exclude: /node_modules/,
+          loader: ExtractTextPlugin.extract({
+              fallbackLoader: 'style-loader',
+              loader: 'css-loader?localIdentName=[hash:base64]&modules&importLoaders=1!sass-loader',
+           }),
       },
       {
         test: /\.css$/,
