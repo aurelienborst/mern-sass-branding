@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 // Import Style
 // import styles from './App.scss';
-const styles = require("./App.scss");
+const styles = require('./App.scss');
 
 // Import Components
 import Helmet from 'react-helmet';

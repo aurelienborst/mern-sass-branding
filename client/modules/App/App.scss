@@ -1,9 +1,104 @@
-$navy: #001e38;
-$green: #15b78f;
+//TODO : We cannot import this file here, because the name cool be branding1_variables.scss, branding2_variables.scss, etc.
+@import "../../assets/branding_variables";
 
 .container {
   max-width: 980px;
   width: 100%;
   padding: 15px;
   margin: 0 auto;
+}
+
+.bidoum {
+  color:pink!important;
+}
+
+//Play with colors !
+@each $name, $colors in $main-colors {
+  //text-name to put a color
+  .text-#{$name} {
+    color: nth($colors, 1);
+  }
+  //icon-color- to put a color
+  .icon-color-#{$name} {
+    fill: nth($colors, 1);
+  }
+  //Badge
+  .badge-#{$name} {
+    color: white;
+    background-color: rgba( nth($colors, 1), 1);
+  }
+
+  //Background color
+  .bg-transparent-#{$name} {
+    background: rgba( nth($colors, 1), .5);
+    height: 100%;
+    span {
+      color: nth($colors, 3)
+    }
+  }
+
+  //bg-name to put a background
+  .bg-#{$name} {
+    background-color: nth($colors, 1)!important;
+  }
+
+  //.bg-name-gradients to put a nice gradients from the main colors.
+  .bg-#{$name}-gradients {
+    background-image: linear-gradient(to right, nth($colors, 1) , nth($colors, 2))!important;
+  }
+  //Create a .button-name with options for all $main-colors
+  .button-#{$name} {
+    background-color: nth($colors, 1)!important;
+    color: nth($colors, 3)!important;
+    .fi {
+      color: nth($colors, 3)!important;
+    }
+    svg {
+      fill: nth($colors, 3)!important;
+    }
+    &:hover {
+      background-color:nth($colors, 2)!important;
+    }
+    &.outline {
+      background: transparent !important;
+      border: 1px solid nth($colors, 1)!important;
+      color:  nth($colors, 1)!important;
+      .fi {
+        color: nth($colors, 1)!important;
+      }
+      svg {
+        fill: nth($colors, 1)!important;
+      }
+      &:hover {
+        background-color:nth($colors, 1)!important;
+        color: nth($colors, 3)!important;
+        .fi {
+          color: nth($colors, 3)!important;
+        }
+        svg {
+          fill: nth($colors, 3)!important;
+        }
+      }
+    }
+    &.inverse {
+      background: transparent !important;
+      color:  nth($colors, 1)!important;
+      .fi {
+        color: nth($colors, 1)!important;
+      }
+      svg {
+        fill: nth($colors, 3)!important;
+      }
+      &:hover {
+        background-color:nth($colors, 1)!important;
+        color: nth($colors, 3)!important;
+        .fi {
+          color: nth($colors, 3)!important;
+        }
+        svg {
+          fill: nth($colors, 3)!important;
+        }
+      }
+    }
+  }
 }

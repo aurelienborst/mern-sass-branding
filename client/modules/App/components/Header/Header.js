@@ -23,6 +23,8 @@ export function Header(props, context) {
         <h1 className={styles['site-title']}>
           <Link to="/" ><FormattedMessage id="siteTitle" /></Link>
         </h1>
+      {/* TODO : .bidoum not working*/}
+        <h2 className="bidoum">This text should be in pink</h2>
         {
           context.router.isActive('/', true)
             ? <a className={styles['add-post-button']} href="#" onClick={props.toggleAddPost}><FormattedMessage id="addPost" /></a>
